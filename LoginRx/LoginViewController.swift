@@ -30,7 +30,7 @@ class LoginViewController: UIViewController {
         loginVM.isValid.subscribe(onNext: { [unowned self] isValid in
             self.loginStatusLabel.text = isValid ? "Enabled" : "Not enabled"
             self.loginStatusLabel.textColor = isValid ? .green : .red
-        }).addDisposableTo(self.disposeBag)
+        }).disposed(by: disposeBag)
     }
 
 }
